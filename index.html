@@ -1,17 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- REACT LIBRARY -->
     <script src="https://unpkg.com/react@15.5.4/dist/react.js"></script>
     <!-- REACT DOM LIBRARY -->
-    <script src=”https://unpkg.com/react-dom@15.5.4/dist/react-dom.js”></script>
+    <script src="https://unpkg.com/react-dom@15.5.4/dist/react-dom.js"></script>
     <!-- BABEL LIBRARY -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
     <title>Let's React!</title>
 </head>
+
 <body>
-    
+    <!-- DESIGNATED LOCATION TO INSERT REACT CONTENT -->
+    <div id="app">React has not rendered yet</div>
+    <div id="main">React still has not rendered yet</div>
+
+    <!-- JAVASCRIPT -->
+    <script type="text/babel">
+
+        // CHALLENGE TIME 
+            // render a paragraph tag witht he content "i am a paragraph!"
+            // render an anchor tag that links to gogole withthe content "visit google"
+            // render an unordered list with three list items you need to do today
+
+        // RENDER REACT TO THE DOM - WILL ACCEPT TWO ARGUMENTS (REACT WHAT, REACT WHERE)
+        ReactDOM.render(
+            // REACT WHAT - JSX
+            <h1>Hello World</h1>,
+            // REACT WHERE - DIV WITH ID OF "APP"
+            document.getElementById('app')
+        );
+
+        ReactDOM.render(
+            <h2>This is React displaying an h2 tag</h2>,
+            document.getElementById('main')
+        );
+    </script>
+
 </body>
+
 </html>

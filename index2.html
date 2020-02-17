@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- REACT LIBRARY -->
+    <script src="https://unpkg.com/react@15.5.4/dist/react.js"></script>
+    <!-- REACT DOM LIBRARY -->
+    <script src="https://unpkg.com/react-dom@15.5.4/dist/react-dom.js"></script>
+    <!-- BABEL LIBRARY -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+    <title>Challenge time!</title>
+</head>
+
+<body>
+    <div class="paragraph1">This is not REACT</div>
+    <div class="google">This is also not REACT</div>
+    <div class="toDoList">Still not REACT</div>
+
+    <script type="text/babel">
+        // CHALLENGE TIME 
+        // render a paragraph tag witht he content "i am a paragraph!"
+        // render an anchor tag that links to gogole withthe content "visit google"
+        // render an unordered list with three list items you need to do today
+        ReactDOM.render(
+            <p>Look at this long paragraph that I am placing into my paragraph1 class using React! That was only a sentence. Another.</p>,
+            document.querySelector('.paragraph1')
+        );
+        ReactDOM.render(
+            <a href="https://www.google.com">Visit Google</a>,
+            document.querySelector('.google')
+        );
+        ReactDOM.render(
+            <ul>
+                <li>Learn React</li>
+                <li>Learn more react</li>
+                <li>Stay hydrated</li>
+            </ul>,
+            document.querySelector('.toDoList')
+        );
+
+    </script>
+</body>
+
+</html>
