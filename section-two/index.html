@@ -27,10 +27,44 @@
         );
     }
 
+    var Red = function() {
+        return <h1>Red</h1>
+    }
+
+    var Orange = function() {
+        return <h1>Orange</h1>
+    }
+
+    var Yellow = () => <h1>Yellow</h1>
+
+    var Green = () => <h1>Green</h1>
+
+    var Blue = function () {
+        return <h1>Blue</h1>
+    }
+
+    var Indigo = function() {
+        return <h1>Indigo</h1>
+    }
+
+    var Violet = () => <h1>Violet</h1>
+
+    // CHALLENGE TIME
+    // CREATE A COMPONENT OR ALL THE COLORS OF THE SPECTRUM AND RENDER THEM
+    // TO THE DOM WITHIN ONE PARENT DIV
 
     ReactDOM.render(
         // REACT WHAT
-        <ColorSpectrum/>,
+        <div>
+            <ColorSpectrum/>
+            <Red/>
+            <Orange/>
+            <Yellow/>
+            <Green/>
+            <Blue/>
+            <Indigo/>
+            <Violet/>
+            </div>,
         document.getElementById('app')
     )
     
