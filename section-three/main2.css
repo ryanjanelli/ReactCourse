@@ -1,0 +1,22 @@
+.circle {
+  height: 200px;
+  width: 200px;
+  background-color: red;
+  border-radius: 50%;
+  text-align: center;
+}
+
+.square {
+    height: 200px;
+    width: 200px;
+    background-color: blue;
+    text-align: center;
+}
+
+.triangle {
+    height: 0;
+    width: 0;
+    border-left: 100px solid transparent;
+    border-right: 100px solid transparent;
+    border-bottom: 200px solid yellow;
+}
