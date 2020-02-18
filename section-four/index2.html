@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- REACT LIBRARY -->
+    <script src="https://unpkg.com/react@15.5.4/dist/react.js"></script>
+    <!-- REACT DOM LIBRARY -->
+    <script src="https://unpkg.com/react-dom@15.5.4/dist/react-dom.js"></script>
+    <!-- BABEL LIBRARY -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+    <title>Class Components</title>
+</head>
+
+<body>
+    <div id="app">React has not rendered yet</div>
+
+    <script type="text/babel">
+
+        class Shapes extends React.Component {
+            render() {
+                return (
+                    <div>
+                        <Circle />
+                        <Square />
+                        <Triangle />
+                    </div>
+                )
+            }
+        }
+
+        class Circle extends React.Component {
+            render() {
+                var circleStyle = {
+                    height: 200,
+                    width: 200,
+                    backgroundColor: 'red',
+                    borderRadius: '50%',
+                    textAlign: 'center'
+                }
+                return <h1 style={circleStyle}>Circle</h1>
+            }
+        }
+
+        class Square extends React.Component {
+            render() {
+                var squareStyle = {
+                    height: 200,
+                    width: 200,
+                    backgroundColor: 'blue',
+                    textAlign: 'center'
+                }
+                return <h1 style={squareStyle}>Square</h1>
+            }
+        }
+
+        class Triangle extends React.Component {
+            render() {
+                var triangleStyle = {
+                    height: 0,
+                    width: 0,
+                    borderLeft: '100px solid transparent',
+                    borderRight: '100px solid transparent',
+                    borderBottom: '200px solid yellow'
+                }
+                return <h1 style={triangleStyle}>Triangle</h1>
+            }
+        }
+
+        ReactDOM.render(
+            // REACT WHAT, REACT WHERE
+
+            <Shapes />,
+            document.getElementById('app')
+        );
+
+    </script>
+</body>
+
+</html>
