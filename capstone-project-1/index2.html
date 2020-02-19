@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- REACT LIBRARY -->
+    <script src="https://unpkg.com/react@15.5.4/dist/react.js"></script>
+    <!-- REACT DOM LIBRARY -->
+    <script src="https://unpkg.com/react-dom@15.5.4/dist/react-dom.js"></script>
+    <!-- BABEL LIBRARY -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>FriendLy</title>
+</head>
+
+<body>
+    <div id="app">React has not rendered yet</div>
+
+    <script type="text/babel">
+        // FriendLy Complex Component
+        var FriendLy = function (props) {
+            var friendlyStyle = {
+                display: 'inline-block',
+                margin: 20,
+                height: 300,
+                width: 200,
+                padding: 0,
+                backgroundColor: '#FFF',
+                WebkitFilter: 'drop-shadow(0px 0px 5px #555)',
+                filter: 'drop-shadow(0px 0px 5px #555)'
+            }
+            return (
+                <div style={friendlyStyle}>
+                    <Avatar img={props.img}/>
+                    <UserName name={props.name} />
+                    <GetConnected />
+                </div>
+            );
+        }
+        // Avatar Component
+        var Avatar = function (props) {
+            var avatarStyle = {
+                marginLeft: 27,
+                marginTop: 20,
+                height: 150,
+                width: 150,
+                borderRadius: '50%'
+            }
+            return (
+                <img style={avatarStyle} src={props.img} alt="" />
+            );
+        }
+
+        // UserName Component
+        var UserName = function (props) {
+            var userNameStyle = {
+                fontSize: 18,
+                fontFamily: 'Arial, Helvetica, sans-serif',
+                margin: 20,
+                textAlign: 'center'
+            }
+            return (
+                <h1 style={userNameStyle}>{props.name}</h1>
+            );
+        }
+
+        // Get Connected Component
+        var GetConnected = function () {
+            var getConnectedStyle = {
+                textAlign: 'center'
+            }
+            return (
+                <div style={getConnectedStyle}>
+                    <Like />
+                    <Share />
+                    <Add />
+                </div>
+            );
+        }
+
+        var iconStyle = {
+            margin: 20
+        }
+
+        // Like Componenet
+        function Like() {
+            return (
+
+                <i className="fa fa-thumbs-o-up" aria-hidden="true" style={iconStyle}></i>
+
+            );
+        }
+
+        // Share Componenet
+        function Share() {
+            return (
+                <i className="fa fa-share" aria-hidden="true" style={iconStyle}></i>
+            );
+        }
+
+        // Add Component
+        function Add() {
+            return (
+                <i className="fa fa-users" aria-hidden="true" style={iconStyle}></i>
+            );
+        }
+
+        // CHALLENGE TIME
+        // Mass produce individual FriendLy cards using props
+        // Challenge 1 - Use props to pass the name of the person from ReactDOM.render() method 
+        // to parent FriendLy component to child UserName component
+        // Challenge 2 - Use props to pass the image URL from ReactDOM.render() method to 
+        // parent FriendLy component to child Avatar component
+
+        ReactDOM.render(
+            <div>
+                <FriendLy name="Ryan Janelli" img="./Ryan_portrait_square.jpg" />
+                <FriendLy name="Rob Merrill" img="https://pbs.twimg.com/profile_images/699422966556168193/zUm4vhAo_400x400.jpg"/>
+                <FriendLy name="Mike Douglas" img="https://images.squarespace-cdn.com/content/v1/530a77dee4b035db71736c02/1570812709805-UW9CYAKYVXKSTO845HHI/ke17ZwdGBToddI8pDm48kMFiMyT1nneRMhnmfuSfpxZ7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0mlM0or4nqX7jrn5yWu0hA1QXedaIFqnAbw_tQShHbKg4-O_KAc44ak5jGzrnn7f3A/Connecticut+headshots+-+lawyer+headshot+-+Seshu+Badrinath.jpg"/>
+                <FriendLy name="David Hasselhoff" img="https://seattleheadshotpro.com/wp-content/uploads/2018/06/Thom-Herrman-Headshots34577-crop-2048px.jpg"/>
+                <FriendLy name="Brook Walleta" img="https://www.unh.edu/unhtoday/sites/default/files/styles/article_huge/public/article/2019/professional_woman_headshot.jpg?itok=3itzxHXh"/>
+                <FriendLy name="Cassandra Heart" img="https://i2.wp.com/www.headshotsla.com/wp-content/uploads/2018/09/Headshots_LA_2820_LA.jpg?fit=1280%2C1920&ssl=1"/>
+                <FriendLy name="Miguel Rodrigues" img="https://image7.photobiz.com/8798/8_20191203014915_10597484_large.jpg"/>
+                <FriendLy name="Vivek Pejaver" img="https://slavablazerphotography.com/wp-content/uploads/2017/03/IMG_6127_copy.jpg"/>
+            </div>
+            ,
+            document.getElementById("app")
+        );
+    </script>
+</body>
+
+</html>
