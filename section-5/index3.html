@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- REACT LIBRARY -->
+    <script src="https://unpkg.com/react@15.5.4/dist/react.js"></script>
+    <!-- REACT DOM LIBRARY -->
+    <script src="https://unpkg.com/react-dom@15.5.4/dist/react-dom.js"></script>
+    <!-- BABEL LIBRARY -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+    <title>Styling Components</title>
+</head>
+
+<body>
+    <div id="app">React has not rendered yet</div>
+
+    <script type="text/babel">
+
+        // CHALLENGE TIME - CREATE ONE COMPONENET AND USE PROPS TO RE-CREATE THE PREVIOUS RESULTS
+
+        var ColorSpectrum = function () {
+            return (
+                <div>
+                    <Color color="red" />
+                    <Color color="orange" />
+                    <Color color="yellow" />
+                    <Color color="green" />
+                    <Color color="blue" />
+                    <Color color="indigo" />
+                    <Color color="violet" />
+                </div>
+            )
+        }
+
+        // Using a class component
+        // class Color extends React.Component {
+        //     render() {
+        //         var colorStyle = {
+
+        //             height: 50,
+        //             width: 150,
+        //             backgroundColor: this.props.color,
+        //             textTransform: 'capitalize',
+        //             textAlign: 'center'
+
+        //         }
+        //         return (
+        //             <h1 style={colorStyle}>{this.props.color}</h1>
+        //         );
+        //     }
+        // }
+
+        // Using a stateless functional component
+        var Color = function (props) {
+            var colorStyle = {
+
+                height: 50,
+                width: 150,
+                backgroundColor: props.color,
+                textTransform: 'capitalize',
+                textAlign: 'center'
+
+            }
+            return <h1 style={colorStyle}>{props.color}</h1>;
+        }
+
+        ReactDOM.render(
+            // REACT WHAT
+
+            <ColorSpectrum />,
+            document.getElementById('app')
+        )
+        // var Red = function () {
+        //     var redStyle = {
+
+        //         height: 50,
+        //         width: 150,
+        //         backgroundColor: 'red',
+        //         textAlign: 'center'
+
+        //     }
+        //     return <h1 style={redStyle}>Red</h1>;
+        // }
+
+        // var Orange = function () {
+        //     var orangeStyle = {
+
+        //         height: 50,
+        //         width: 150,
+        //         backgroundColor: 'orange',
+        //         textAlign: 'center'
+
+        //     }
+        //     return <h1 style={orangeStyle}>Orange</h1>
+        // }
+
+        // var Yellow = function () {
+        //     var yellowStyle = {
+
+        //         height: 50,
+        //         width: 150,
+        //         backgroundColor: 'yellow',
+        //         textAlign: 'center'
+
+        //     }
+        //     return <h1 style={yellowStyle}>Yellow</h1>
+        // }
+
+        // var Green = function () {
+        //     var greenStyle = {
+
+        //         height: 50,
+        //         width: 150,
+        //         backgroundColor: 'green',
+        //         textAlign: 'center'
+
+        //     }
+        //     return <h1 style={greenStyle}>Green</h1>
+        // }
+
+        // var Blue = function () {
+        //     var blueStyle = {
+
+        //         height: 50,
+        //         width: 150,
+        //         backgroundColor: 'blue',
+        //         textAlign: 'center'
+
+        //     }
+        //     return <h1 style={blueStyle}>Blue</h1>
+        // }
+
+        // var Indigo = function () {
+        //     var indigoStyle = {
+
+        //         height: 50,
+        //         width: 150,
+        //         backgroundColor: 'indigo',
+        //         textAlign: 'center'
+
+        //     }
+        //     return <h1 style={indigoStyle}>Indigo</h1>
+        // }
+
+        // var Violet = function () {
+        //     var violetStyle = {
+
+        //         height: 50,
+        //         width: 150,
+        //         backgroundColor: 'violet',
+        //         textAlign: 'center'
+
+        //     }
+        //     return <h1 style={violetStyle}>Violet</h1>
+        // }
+
+    </script>
+
+</body>
+
+</html>
