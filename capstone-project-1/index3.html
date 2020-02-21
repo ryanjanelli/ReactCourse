@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- REACT LIBRARY -->
+    <script src="https://unpkg.com/react@15.5.4/dist/react.js"></script>
+    <!-- REACT DOM LIBRARY -->
+    <script src="https://unpkg.com/react-dom@15.5.4/dist/react-dom.js"></script>
+    <!-- BABEL LIBRARY -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>FriendLy</title>
+</head>
+
+<body>
+    <div id="app">React has not rendered yet</div>
+
+    <script type="text/babel">
+        // FriendLy Complex Component
+        var FriendLy = function (props) {
+            var friendlyStyle = {
+                display: 'inline-block',
+                margin: 20,
+                height: 300,
+                width: 200,
+                padding: 0,
+                backgroundColor: '#FFF',
+                WebkitFilter: 'drop-shadow(0px 0px 5px #555)',
+                filter: 'drop-shadow(0px 0px 5px #555)'
+            }
+            return (
+                <div>
+                    {props.people.map(function (person) {
+                        return (
+                            <div style={friendlyStyle} key={person.name}>
+                                <Avatar img={person.img} />
+                                <UserName name={person.name} />
+                                <GetConnected />
+                            </div>
+                        );
+                    })}
+                </div>
+                // <div style={friendlyStyle}>
+                //     <Avatar img={props.img} />
+                //     <UserName name={props.name} />
+                //     <GetConnected />
+                // </div>
+            );
+        }
+        // Avatar Component
+        var Avatar = function (props) {
+            var avatarStyle = {
+                marginLeft: 27,
+                marginTop: 20,
+                height: 150,
+                width: 150,
+                borderRadius: '50%'
+            }
+            return (
+                <img style={avatarStyle} src={props.img} alt="" />
+            );
+        }
+
+        // UserName Component
+        var UserName = function (props) {
+            var userNameStyle = {
+                fontSize: 18,
+                fontFamily: 'Arial, Helvetica, sans-serif',
+                margin: 20,
+                textAlign: 'center'
+            }
+            return (
+                <h1 style={userNameStyle}>{props.name}</h1>
+            );
+        }
+
+        // Get Connected Component
+        var GetConnected = function () {
+            var getConnectedStyle = {
+                textAlign: 'center'
+            }
+            return (
+                <div style={getConnectedStyle}>
+                    <Like />
+                    <Share />
+                    <Add />
+                </div>
+            );
+        }
+
+        var iconStyle = {
+            margin: 20
+        }
+
+        // Like Componenet
+        function Like() {
+            return (
+
+                <i className="fa fa-thumbs-o-up" aria-hidden="true" style={iconStyle}></i>
+
+            );
+        }
+
+        // Share Componenet
+        function Share() {
+            return (
+                <i className="fa fa-share" aria-hidden="true" style={iconStyle}></i>
+            );
+        }
+
+        // Add Component
+        function Add() {
+            return (
+                <i className="fa fa-users" aria-hidden="true" style={iconStyle}></i>
+            );
+        }
+
+        var people = [
+            { name: "Rob", img: "https://pbs.twimg.com/profile_images/699422966556168193/zUm4vhAo.jpg" },
+            { name: "Charles", img: "https://static.pexels.com/photos/38630/bodybuilder-weight-training-stress-38630.jpeg" },
+            { name: "Natalie", img: "https://static.pexels.com/photos/509195/pexels-photo-509195.jpeg" },
+            { name: "Jenny", img: "https://www.unh.edu/unhtoday/sites/default/files/styles/article_huge/public/article/2019/professional_woman_headshot.jpg?itok=3itzxHXh" },
+            { name: "Sarah", img: "https://static.pexels.com/photos/324658/pexels-photo-324658.jpeg" },
+            { name: "Josh", img: "https://seattleheadshotpro.com/wp-content/uploads/2018/06/Thom-Herrman-Headshots34577-crop-2048px.jpg" },
+            { name: "Kenny", img: "https://static.pexels.com/photos/325682/pexels-photo-325682.jpeg" },
+            { name: "John", img: "https://static.pexels.com/photos/45882/man-crazy-funny-dude-45882.jpeg" },
+            { name: "Alisha", img: "https://static.pexels.com/photos/38554/girl-people-landscape-sun-38554.jpeg" }
+        ];
+
+        ReactDOM.render(
+            <FriendLy people={people} />
+            ,
+            document.getElementById("app")
+        );
+    </script>
+</body>
+
+</html>
